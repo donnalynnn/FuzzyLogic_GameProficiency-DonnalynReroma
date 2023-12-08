@@ -21,9 +21,9 @@ def calculate_rank():
     if 0 <= fuzzy_result <= 100:
         # Define a custom mapping from numeric result to words
         rank_words_mapping = {
-            (0, 20): 'The Happy Noob',
-            (20, 40): 'The Determined Rookie',
-            (40, 60): 'The Hungry Veteran',
+            (0, 20): 'Happy Noob',
+            (20, 40): 'Determined Rookie',
+            (40, 60): 'Hungry Veteran',
             (60, 80): 'Evil Warlord',
             (80, 100): 'Gamer Utopia',
             (60, 80): 'Gamer Burn Out'
@@ -32,8 +32,8 @@ def calculate_rank():
         # Find the corresponding word based on the numeric result
         result_word = next(word for (lower, upper), word in rank_words_mapping.items() if lower <= fuzzy_result <= upper)
 
-        print(f"Player's Rank (Numeric): {fuzzy_result}")
-        print(f"Player's Rank (Word): {result_word}")
+        print(f"Player's Game Proficiency: {fuzzy_result}")
+        print(f"You are a {result_word}!")
     else:
         print("Invalid result. Please check your input values.")
         
